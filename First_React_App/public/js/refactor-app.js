@@ -1,20 +1,18 @@
 /**
- *  To make the application data-driven, the Props and state change are used, but additionally, property 
- *  initializers are also used to simplify the React component classes
+ * We can also use property initializers to make refactors to the app.js code, so that we won't be needing to use the constructor
+ * method, although personally, I like using the constructor, it doesn't seem like a shortcut. Using the refactors does the following:
+ *      We can use arrow functions for custom component methods and avoid binding this
+ *      We can define the initial state outside of constructor
  */
 
 
-class ProductList extends React.Component {
-    // define state inside the constructor method AND USE IT TO HOLD DATA INSTEAD OF READING DIRECTLY FROM seed
-    constructor(props){
-        super(props);
-        this.state = {
-            products : [],
-        };
+ class ProductList extends React.Component {
+    state = {
+        products : [],
+    };
 
-        // bind the custom method to this
-        this.handleProductUpVote = this.handleProductUpVote.bind(this);
-    }
+    // define state inside the constructor method AND USE IT TO HOLD DATA INSTEAD OF READING DIRECTLY FROM seed
+    
     // using the component did mount method to set the state which then displays the products
     componentDidMount(){
         this.setState({ 
@@ -22,7 +20,7 @@ class ProductList extends React.Component {
         });
     }
     // we are then using immutability so that the initial state of the products is not changed
-    handleProductUpVote(productId){
+    handleProductUpVote = (productId) => {
         // the map function is used to traverse the products array and returns a new array
         const nextProducts = this.state.products.map((product) => {
             // then a check of whether the current product matches the productId
@@ -75,16 +73,13 @@ class ProductList extends React.Component {
 }
 
 class Product extends React.Component{
-    // this function will call the prop function from Product in ProductList
-    handleUpVote(){
+    // using the arrow functions, we can drop the constructor definitions and there won't be any need for the binding calls
+    
+    handleUpVote = () => {
         this.props.onVote(this.props.id);
     }
-
-    // React invokes constructor() first thing when initializing our component
-    constructor(props){
-        super(props); // always call this one first
-        this.handleUpVote = this.handleUpVote.bind(this);
-    }
+    
+   
 
     render(){
         return (
