@@ -86,6 +86,7 @@ class Product extends React.Component{
         this.handleUpVote = this.handleUpVote.bind(this);
     }
 
+    get 
     render(){
         return (
             <div className="item">
