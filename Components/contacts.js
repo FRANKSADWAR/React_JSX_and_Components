@@ -22,7 +22,10 @@ class Contact extends React.Component {
 
     // define a method/function that checks the password
     authorize(e){
+        // obtain the value of password from the element
         const password = e.target.querySelector('input[type=="password"]').value;
+        
+        // check whether the password is the same as the state password
         const auth = password === this.state.password;
         this.setState({
             authorized: auth
