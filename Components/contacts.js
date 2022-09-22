@@ -24,9 +24,11 @@ class Contact extends React.Component {
     authorize(e){
         // obtain the value of password from the element
         const password = e.target.querySelector('input[type=="password"]').value;
-        
+
         // check whether the password is the same as the state password
         const auth = password === this.state.password;
+
+        // set the state based on the value of auth returned, to set state we use the setState method
         this.setState({
             authorized: auth
         });
