@@ -9,7 +9,7 @@ class ProductList extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            products : [],
+            products : [], // initialize the state to an empty array
         };
 
         // bind the custom method to this
@@ -86,7 +86,6 @@ class Product extends React.Component{
         this.handleUpVote = this.handleUpVote.bind(this);
     }
 
-    get 
     render(){
         return (
             <div className="item">
