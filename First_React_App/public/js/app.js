@@ -2,8 +2,6 @@
  *  To make the application data-driven, the Props and state change are used, but additionally, property 
  *  initializers are also used to simplify the React component classes
  */
-
-
 class ProductList extends React.Component {
     // define state inside the constructor method AND USE IT TO HOLD DATA INSTEAD OF READING DIRECTLY FROM seed
     constructor(props){
