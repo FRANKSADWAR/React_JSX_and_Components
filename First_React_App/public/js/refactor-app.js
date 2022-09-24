@@ -1,6 +1,6 @@
 /**
- * We can also use property initializers to make refactors to the app.js code, so that we won't be needing to use the constructor
- * method, although personally, I like using the constructor, it doesn't seem like a shortcut. Using the refactors does the following:
+ *      We can also use property initializers to make refactors to the app.js code, so that we won't be needing to use the constructor
+ *      method, although personally, I like using the constructor, it doesn't seem like a shortcut. Using the refactors does the following:
  *      We can use arrow functions for custom component methods and avoid binding this
  *      We can define the initial state outside of constructor
  */
@@ -10,7 +10,6 @@
     state = {
         products : [],
     };
-
     // define state inside the constructor method AND USE IT TO HOLD DATA INSTEAD OF READING DIRECTLY FROM seed
     
     // using the component did mount method to set the state which then displays the products
@@ -78,9 +77,6 @@ class Product extends React.Component{
     handleUpVote = () => {
         this.props.onVote(this.props.id);
     }
-    
-   
-
     render(){
         return (
             <div className="item">
