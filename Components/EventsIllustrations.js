@@ -33,3 +33,4 @@ class Button extends React.Component {
         );
     }
 }
+ReactDOM.render(<Talker/>, document.getElementById('app'));
