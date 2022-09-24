@@ -73,7 +73,7 @@ class ProductList extends React.Component {
 }
 
 class Product extends React.Component{
-    // this function will call the prop function from Product in ProductList
+    // this function will call the prop function event handler from Product in ProductList
     handleUpVote(){
         this.props.onVote(this.props.id);
     }
