@@ -8,10 +8,10 @@ import ReactDOM  from "react";
 class Talker extends React.Component{
     constructor(props){
         super(props);
-        this.talk = this.talk.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    talk(){
+    handleClick(){
         let speech='';
         for(var i=0; i < 10000; i++){
             speech += 'Blah ';
@@ -20,14 +20,14 @@ class Talker extends React.Component{
     }
 
     render(){
-        return <Button handleSpeech={this.talk}/>
+        return <Button onClick={this.handleClick}/>
     }
 }
 
 class Button extends React.Component {
     render(){
         return (
-            <button onClick={this.props.handleSpeech}>
+            <button onClick={this.props.onClick}>
                 Click Me!
             </button>
         );
