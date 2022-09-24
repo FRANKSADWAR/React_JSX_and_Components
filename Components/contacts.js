@@ -11,7 +11,6 @@ class Contact extends React.Component {
         };
         this.authorize = this.authorize.bind(this);
     }
-
     // set the state using a lifecycle method, setting state here triggers re-rendering
     componentDidMount(){
         this.setState({
@@ -19,7 +18,6 @@ class Contact extends React.Component {
             authorized: true
         });
     }
-
     // define a method/function that checks the password
     authorize(e){
         // obtain the value of password from the element
@@ -33,7 +31,6 @@ class Contact extends React.Component {
             authorized: auth
         });
     }
-
     render(){
         const login = (<form action="#" >
                           <input type="password"/>
@@ -46,8 +43,7 @@ class Contact extends React.Component {
                 <li>555.555.555</li>
                 <li>P.O BOX 2200</li>
             </ul>
-        )                
-        
+        );                
         return (
             <div id="authorization">
                 <h1>{this.state.authorized ? contactInfo : login}</h1>
