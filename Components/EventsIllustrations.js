@@ -10,6 +10,11 @@ class Talker extends React.Component{
         super(props);
         this.handleClick = this.handleClick.bind(this);
     }
+    componentDidMount(){
+        this.state={
+
+        };
+    }
 
     handleClick(){
         let speech='';
