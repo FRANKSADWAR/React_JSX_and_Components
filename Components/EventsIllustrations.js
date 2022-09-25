@@ -9,11 +9,14 @@ class Talker extends React.Component{
     constructor(props){
         super(props);
         this.handleClick = this.handleClick.bind(this);
+        this.state = {
+            // initialize the state first
+        }
     }
     componentDidMount(){
-        this.state={
-
-        };
+        this.setState({
+            // to set the state always use the setState method, one of the lifcycle methods of React
+        });
     }
 
     handleClick(){
