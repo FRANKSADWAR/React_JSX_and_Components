@@ -7,24 +7,25 @@ class Random extends React.Component {
         this.state = {
             color: [34, 174, 235]
         };
+        this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick(){
         this.setState({
-            
-        })
+            color: this.chooseColor()
+        });
     }
 
     componentDidMount(){
-
+        this.applyColor();
     }
     
     componentDidUpdate(prevProps, prevState){
-
+        this.applyColor();
     }
 
     formatColor(ary){
-
+        return "rgb(" + ary.join(", ") + ")";
     }
 
     isLight(){
@@ -45,13 +46,25 @@ class Random extends React.Component {
     }
 
     render(){
-
+        return  (
+            <div>
+                <h1 className={this.isLight() ? "white" : "black"}>
+                    Your color is {this.formatColor(this.state.color)}
+                </h1>
+                <Button light={this.isLight()} onClick={this.handleClick}/>
+            </div>
+        );
     }
 }
 
 class Button extends React.Component {
     render(){
-
+        return (
+            <button className={this.props.light ? 'light-button' : 'dark-button'} 
+                 onClick={this.props.onClick}>
+                Refresh    
+            </button>
+        );
     }
 }
 ReactDOM.render(<Random/>, document.getElementById('content'));
