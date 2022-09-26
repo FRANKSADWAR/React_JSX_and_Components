@@ -18,6 +18,7 @@ class Toggle extends React.Component {
         this.changeColor = this.changeColor.bind(this);
     }
     changeColor(){
+        const newColor = this.state.color === green ? yellow : green;
         this.setState({
             color: yellow
         });
