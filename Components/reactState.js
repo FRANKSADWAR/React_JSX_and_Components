@@ -6,15 +6,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-class Example extends React.Component {
+const yellow= '#fcfcfc';
+const green = 'green';
+
+class Toggle extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            mood: 'great',
-            hungry: false
+            color: yellow
         };
+        this.changeColor = this.changeColor.bind(this);
+    }
+    changeColor(){
+        this.setState({
+
+        });
     }
     render(){
 
     }
 }
+ReactDOM.render()
