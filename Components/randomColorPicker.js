@@ -29,8 +29,21 @@ class Random extends React.Component {
 
     isLight(){
         const rgb = this.state.color;
-        return rgb.reduce()
+        return rgb.reduce((a,b) => a+b) < 127 * 3;
     }
+    applyColor(){
+        const color = this.formatColor(this.state.color);
+        document.body.style.background = color;
+    }
+    
+    chooseColor(){
+        const random =[]; // create an array
+        for(let i = 0; i < 3; i++){
+            random.push(Math.floor(Math.random() * 256));
+        }
+        return random;
+    }
+
     render(){
 
     }
