@@ -16,6 +16,16 @@ class TimersDashboard extends React.Component {
 
 class EditableTimerList extends React.Component {
     render(){
-        
+        return (
+            <div id="timers">
+                <EditableTimer
+                    title="Learn React"
+                    project = 'Web domination'
+                    elapsed = '8986300'
+                    runningSince = {null}
+                    
+                />
+            </div>
+        )
     }
 }
