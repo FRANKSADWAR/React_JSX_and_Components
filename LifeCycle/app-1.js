@@ -23,7 +23,7 @@ class EditableTimerList extends React.Component {
                     project = 'Web domination'
                     elapsed = '8986300'
                     runningSince = {null}
-                    
+                    editFormOpen = {false}
                 />
             </div>
         )
