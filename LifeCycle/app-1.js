@@ -13,3 +13,9 @@ class TimersDashboard extends React.Component {
         );
     }
 }
+
+class EditableTimerList extends React.Component {
+    render(){
+        
+    }
+}
