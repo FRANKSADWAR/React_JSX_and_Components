@@ -46,7 +46,10 @@ class EditableTimer extends React.Component {
         }
         else {
             return (
-                
+                <TimerForm 
+                    title={this.props.title}
+                    project={this.props.project}
+                />
             )
 
         }
