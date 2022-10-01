@@ -68,7 +68,8 @@ class TimerForm extends React.Component {
                 <div className="content">
                     <div className="ui form">
                         <div className="field">
-            
+                            <label>Title</label>
+                            <input type="text" defaultValue={this.props.title}/>
                         </div>
                     </div>
                 </div>
