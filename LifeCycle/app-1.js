@@ -63,6 +63,17 @@ class EditableTimer extends React.Component {
 class TimerForm extends React.Component {
     render(){
         const submitText = this.props.title ? 'Update' : 'Create';
-        
+        return (
+            <div className="ui centered card">
+                <div className="content">
+                    <div className="ui form">
+                        <div className="field">
+            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+
     }
 }
