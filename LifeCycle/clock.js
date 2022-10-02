@@ -17,11 +17,17 @@ class Clock extends React.Component {
         );
     }
 
+    // this method is called immediately after the render method
     componentDidMount(){
         const oneSecond = 1000;
-        setInterval(()=> {
+        this.intervalID = setInterval(()=> {
             this.setState({date: new Date() });
         }, oneSecond);
+    }
+
+    // using the componentWillUnmount method to minimize side effects of the component
+    componentWillUnmount(){
+        clearInterval(this.intervalID);
     }
 }
 
