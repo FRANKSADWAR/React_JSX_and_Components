@@ -26,10 +26,25 @@ class App extends React.Component {
     render(){
         let body;
         if(this.state.currentUsername){
-            body = <profile
+            body = (<Profile
+                    username={this.state.currentUsername}
+                    onChoose={this.handleChoose}/> );
+                
         }
+        else{
+            body = <Directory onChoose={this.handleChoose}/>;
+        }
+
+        return (
+            <div className="App">
+                <header>
+                    <h1>PetBook</h1>
+                    <nav>
+                        {this.state.currentUsername && (<button onClick={this.handleReturnToDirectoryClick}>Return to directory</button>)}
+                    </nav>
+                </header>
+                <main>{body}</main>
+            </div>
+        );
     }
-
-
-    
 }
