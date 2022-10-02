@@ -44,12 +44,24 @@ export function fetchUserData(username, callback){
             'Invalid username. Make sure it is "cat" "dog" or "komodo".'
         );
     }
+
+    const fetch = new Fetch();
+
+    const delay = Math.floor(Math.random() * 1000) + 500;
+
+    const timeout = setTimeout(() => {
+        timeoutByFetchId.delete(fetch._id);
+        callback(FAKE_USER_DATA[username]);
+    }, delay);
+
+    timeoutByFetchId.set(fetch._id, timeout);
+    return fetch;
 }
 
-const fetch = new Fetch();
-
-const delay = Math.floor(Math.random() * 1000) + 500;
-
-const timeout = setTimeout(() => {
-
-})
+export function cancelFetch(fetch){
+    if(!fetch || typeof fetch !== 'object'){
+        return;
+    }
+    const timeout = timeoutByFetchId.get(fetch._id);
+    clearTimeout
+}
