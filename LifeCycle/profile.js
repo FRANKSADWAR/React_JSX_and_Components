@@ -11,12 +11,24 @@ class Profile extends React.Component {
     }
 
     loadUserData(){
-        
+
     }
 
     render(){
         return (
 
         )
+    }
+
+    componentDidMount(){
+
+    }
+
+    componentDidUpdate(){
+        
+    }
+
+    componentWillUnmount(prevProps){
+
     }
 }
