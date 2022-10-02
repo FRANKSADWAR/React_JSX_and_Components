@@ -61,11 +61,14 @@ export class Profile extends React.Component {
         this.loadUserData();
     }
 
-    componentWillUnmount(prevProps){
-
+    componentWillUnmount(){
+        cancelFetch(this.fetchID);
     }
 
-    componentDidUpdate(){
-
+    componentDidUpdate(prevProps){
+        if(this.props.username !== prevProps.username){
+            cancelFetch(this.fetchID);
+            this.loadUserData();
+        }
     }
 }
