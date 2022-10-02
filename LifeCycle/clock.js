@@ -24,7 +24,7 @@ class Clock extends React.Component {
     render(){
         return (
             <div>
-                {this.state.date.toLocaleTimeString()}
+                {this.props.isPrecise ? this.state.date.toISOString() : this.state.date.toLocaleTimeString()}
             </div>
         );
     }
@@ -50,6 +50,15 @@ class Clock extends React.Component {
     // using the componentWillUnmount method to minimize side effects of the component
     componentWillUnmount(){
         clearInterval(this.intervalID);
+    }
+
+    // updating the components 
+    componentDidUpdate(prevProps){
+        if(this.props.isPrecise === prevProps.isPrecise){
+            return;
+        }
+        clearInterval(this.intervalID);
+        this.startInterval();
     }
 }
 
