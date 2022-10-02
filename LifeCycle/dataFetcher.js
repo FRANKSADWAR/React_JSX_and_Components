@@ -46,9 +46,7 @@ export function fetchUserData(username, callback){
     }
 
     const fetch = new Fetch();
-
     const delay = Math.floor(Math.random() * 1000) + 500;
-
     const timeout = setTimeout(() => {
         timeoutByFetchId.delete(fetch._id);
         callback(FAKE_USER_DATA[username]);
@@ -63,5 +61,6 @@ export function cancelFetch(fetch){
         return;
     }
     const timeout = timeoutByFetchId.get(fetch._id);
-    clearTimeout
+    clearTimeout(timeout);
+    timeoutByFetchId.delete(fetch._id);
 }
