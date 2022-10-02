@@ -1,59 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Profile } from './Profile';
-import { Directory } from './Directory';
+import React from "react";
+import { fetchUserData ,cancelFetch } from "./dataFetcher";
+import { Userlist } from "./Userlist";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentUsername: null,
-    };
-    this.handleChoose = this.handleChoose.bind(this);
-    this.handleReturnToDirectoryClick = this.handleReturnToDirectoryClick.bind(
-      this
-    );
-  }
-
-  handleChoose(newUsername) {
-    this.setState({ currentUsername: newUsername });
-  }
-
-  handleReturnToDirectoryClick() {
-    this.setState({ currentUsername: null });
-  }
-
-  render() {
-    let body;
-    if (this.state.currentUsername) {
-      body = (
-        <Profile
-          username={this.state.currentUsername}
-          onChoose={this.handleChoose}
-        />
-      );
-    } else {
-      body = <Directory onChoose={this.handleChoose} />;
+class Profile extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            userData : null,
+        }
     }
 
-    return (
-      <div className="App">
-        <header>
-          <h1>PetBook</h1>
+    loadUserData(){
+        
+    }
 
-          <nav>
-            {this.state.currentUsername && (
-              <button onClick={this.handleReturnToDirectoryClick}>
-                Return to directory
-              </button>
-            )}
-          </nav>
-        </header>
+    render(){
+        return (
 
-        <main>{body}</main>
-      </div>
-    );
-  }
+        )
+    }
 }
-
-ReactDOM.render(<App />, document.getElementById('app'));
