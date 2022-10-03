@@ -44,6 +44,7 @@ export class Profile extends React.Component {
         return (
             <div className={className}>
                 <div className="profile-picture">
+                    {/**if is loading is false, then pass render the profile picture as a URL */}
                     {!isLoading && (<img src={this.state.userData.profilePictureUrl} alt=""/>)}
                 </div>
                 <div className="profile-body">
@@ -57,14 +58,17 @@ export class Profile extends React.Component {
         )
     }
 
+    // this is a lifecycle method for when the component has been mounted in the DOM
     componentDidMount(){
         this.loadUserData();
     }
 
+    // cleaning the side-effects of the code
     componentWillUnmount(){
         cancelFetch(this.fetchID);
     }
 
+    // update the components as a result of changed props or state
     componentDidUpdate(prevProps){
         if(this.props.username !== prevProps.username){
             cancelFetch(this.fetchID);
