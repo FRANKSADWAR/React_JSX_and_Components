@@ -155,4 +155,4 @@ class Timer extends React.Component {
     }
 }
 
-ReactDOM.render(<TimersDashboard/>, document.getElementBuId('app'));
+ReactDOM.render(<TimersDashboard/>, document.getElementById('content'));
