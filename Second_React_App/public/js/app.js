@@ -14,7 +14,7 @@ class TimersDashboard extends React.Component {
             <div className="ui three column centered grid">
                 <div className="column">
                     <EditableTimerList/>
-                    <ToggableTimerForm isOpen={true}/>
+                    <ToggleableTimerForm isOpen={true}/>
                 </div>
             </div>
         )
@@ -44,7 +44,10 @@ class EditableTimerList extends React.Component {
     }
 }
 
-// EditableTimer returns either a TimerForm or a Timer based on the prop editFormOpen
+/*
+                    EditableTimer returns either a TimerForm or a Timer based on the prop editFormOpen, if the prop is editFormOpen is true, then the TimerForm is displayed
+                    else if it is false, then only the Timer is displayed
+* */ 
 class EditableTimer extends React.Component {
     render(){
         if(this.props.editFormOpen){
@@ -53,7 +56,7 @@ class EditableTimer extends React.Component {
                     title={this.props.title}
                     project={this.props.project}
                 />
-            )
+            );
         }
         else{
             return (
@@ -63,10 +66,61 @@ class EditableTimer extends React.Component {
                     elapsedSince = {this.props.elapsed}
                     runningSince = {this.props.runningSince}
                 />
-            )
-
+            );
         }
 
     }
 }
 
+// building the Timer form
+class TimerForm extends React.Component {
+    render() {
+        const submitText = this.props.title ? 'Update' : 'Create';
+        return (
+            <div className="ui centered card">
+                <div className="content">
+                    <div className="ui form">
+                        <div className="field">
+                            <label>Title</label>
+                            <input type='text' defaultValue={this.props.title} />
+                        </div>
+                        <div className="field">
+                            <label>Project</label>
+                            <input type='text' defaultValue={this.props.project} />
+                        </div>
+                        <div className="ui two bottom attached buttons">
+                            <button className="ui basic blue button">
+                                {submitText}
+                            </button>
+                            <button className="ui basic red button">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
+/**
+ * This is a wrapper around the TimerForm, it will display "+" or a TimerForm 
+ */
+class ToggleableTimerForm extends React.Component {
+    render(){
+        if(this.props.isOpen){
+            return (
+                <TimerForm/>
+            )
+        }
+        else{
+            return (
+                <div className="ui basic content center aligned segment">
+                    <button className="ui basic button icon">
+                        <i className="plus icon"/>
+                    </button>
+                </div>
+            )
+        }
+    }
+}
