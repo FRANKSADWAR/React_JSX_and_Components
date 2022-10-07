@@ -23,14 +23,14 @@ class EditableTimerList extends React.Component {
                 <EditableTimer
                     title= 'Learn React'
                     project = 'Web Domination'
-                    elapsed = '8986300'
+                    elapsed = '898630'
                     runningSince = {null}
                     editFormOpen = {false}
                 />
                 <EditableTimer
                     title = 'Learn extreme ironing'
                     project = 'World domination'
-                    elapsed = '389095'
+                    elapsed = '3890985'
                     runningSince = {null}
                     editFormOpen = {true}
                 />
