@@ -19,6 +19,8 @@ class Clock extends React.Component {
         this.state = {
             date : new Date()
         }
+        this.startInterval = this.startInterval.bind(this);
+        
     }
 
     render(){
