@@ -18,7 +18,7 @@ class Parent extends React.Component {
 
     // why scan we just go straight and hit the event target rather than writing another function first --- not a good coding pattern
     /**
-     * 
+     *  A component should be responsible for one and only one activity, not several
      *  
      */
     changeName(e){
