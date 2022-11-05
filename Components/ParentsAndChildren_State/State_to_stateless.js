@@ -16,6 +16,7 @@ class Parent extends React.Component {
         });
     }
 
+    // why scan we just go straight and hit the event target rather than writing another function first
     changeName(e){
         const nameChange = e.target.value;
         this.setState({
