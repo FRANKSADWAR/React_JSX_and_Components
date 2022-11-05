@@ -16,6 +16,9 @@ class Parent extends React.Component {
         });
     }
 
+    changeName(e){
+        const nameChange = e.target.value;
+    }
 
     render(){
         return (
