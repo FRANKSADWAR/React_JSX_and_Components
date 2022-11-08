@@ -39,9 +39,10 @@ class Parent extends React.Component {
 }
 
 class ChildClass extends React.Component {
+    // initialize the state and bind methods to this specific component inside the constructor method
     constructor(props){
         super(props);
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChange = this.handleChange.bind(this); 
     }
 
     handleChange(e){
