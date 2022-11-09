@@ -9,6 +9,7 @@ class Parent extends React.Component {
         };
     }
     
+    // we have to define a function that uses setState to update state, and then pass it down to the stateless component as a prop
     changeName(newName){ // create a function to change the state of this component
         this.setState({
             name: newName
