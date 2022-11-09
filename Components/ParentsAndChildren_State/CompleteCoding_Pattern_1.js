@@ -9,7 +9,7 @@ class Parent extends React.Component {
         };
     }
     
-    changeName(newName){
+    changeName(newName){ // create a function to change the state of this component
         this.setState({
             name: newName
         });
@@ -31,15 +31,15 @@ class Child extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(e){
+    handleChange(e){ // create a function that calls the function to change state of the parent as an event listener
         const name = e.target.value;
-        this.props.onChange(name);
+        this.props.onChange(name); // pass the function as a prop
     }
 
     render(){
         return (
             <div>
-                <select id="great-names" onChange={this.handleChange}>
+                <select id="great-names" onChange={this.handleChange}> 
                     <option value="Frarthur">Frarthur</option>
                     <option value="Gromolus">Gromolus</option>
                     <option value="Thinkpiece">Thinkpiece</option>
@@ -52,7 +52,7 @@ class Child extends React.Component {
 class Sibling extends React.Component {
     
     render(){
-        const name = this.props.name;
+        const name = this.props.name; // display the name using the state object passed here as a prop
         return (
             <div>
                 <h1>Hey, my name is {name}</h1>
