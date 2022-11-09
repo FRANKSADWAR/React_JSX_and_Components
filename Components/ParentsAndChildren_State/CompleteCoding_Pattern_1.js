@@ -22,7 +22,7 @@ class Parent extends React.Component {
                 <Child onChange={this.changeName}/>
                 <Sibling name={this.state.name}/>
             </div>
-        )
+        );
     }
 }
 
@@ -60,7 +60,7 @@ class Sibling extends React.Component {
                 <h2>Don't you think {name} is the pretiest name ever ? </h2>
                 <h2>Sure am glad that my parents picked {name}! </h2>
             </div>
-        )
+        );
     }
 }
 
