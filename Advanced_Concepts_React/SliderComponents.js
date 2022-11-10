@@ -9,6 +9,7 @@ const GUINEAPATHS = [
 ];
 
 
+// this container component will do the job of handling the logic , hence being the container component
 class GuineaPigsContainer extends React.Component {
     constructor(props){
         super(props);
@@ -39,14 +40,15 @@ class GuineaPigsContainer extends React.Component {
     }
 }
 
+// this child components will do the job of just rendering the JSX
 class GuineaPigs extends React.Component {
     render(){
         let src = this.props.src;
         return (
             <div>
-                
+                <h1>Cute Guinea Pigs</h1>
+                <img src={src}/>
             </div>
-        )
-
+        );
     }
 }
