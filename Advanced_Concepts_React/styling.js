@@ -1,9 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
+// use the styles defined by importing them into this file
+import {styles} from "./styles";
 
 const styles = {
     color: 'darkcyan',
-    background: 'mintcream'
+    background: 'mintcream',
+    fontSize: styles.fontSizeHeader // apply the style here
 };
 
 class Header extends React.Component {
