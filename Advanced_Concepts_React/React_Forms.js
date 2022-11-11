@@ -7,6 +7,7 @@ class Input extends React.Component {
         this.state = {
             userInput: ''
         };
+        
         this.handleUserInput = this.handleUserInput.bind(this);
     }
 
