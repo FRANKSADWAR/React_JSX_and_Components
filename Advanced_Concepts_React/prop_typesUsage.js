@@ -11,3 +11,8 @@ class MessageDisplayer extends React.Component {
         return <h1>{this.props.message}</h1>;
     }
 }
+
+
+MessageDisplayer.propTypes = {
+    message: PropTypes.string
+};
