@@ -1,5 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
+/**
+ * This is one way of making forms track changes being made while the user is typing using state, for example to check whether
+ * the repeated password is same as the initial password 
+ */
 
 class Input extends React.Component {
     constructor(props){
@@ -7,7 +11,7 @@ class Input extends React.Component {
         this.state = {
             userInput: ''
         };
-        
+
         this.handleUserInput = this.handleUserInput.bind(this);
     }
 
