@@ -12,7 +12,7 @@ class MessageDisplayer extends React.Component {
     }
 }
 
-
+// This propTypes object should have one property for each expected prop
 MessageDisplayer.propTypes = {
     message: PropTypes.string
 };
