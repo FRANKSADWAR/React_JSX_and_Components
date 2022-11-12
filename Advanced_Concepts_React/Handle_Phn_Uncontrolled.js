@@ -29,3 +29,6 @@ function PhoneNumberForm(){
         </form>
     )
 }
+
+const app = document.getElementById("app");
+ReactDOM.render(<PhoneNumberForm/>,app);
