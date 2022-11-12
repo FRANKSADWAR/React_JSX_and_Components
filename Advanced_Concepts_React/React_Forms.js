@@ -21,6 +21,7 @@ class Input extends React.Component {
         });
     }
 
+    // passing value to the input will make it a controlled component, as it stops using it's internal storage 
     render(){
         return (
             <div>
